@@ -44,22 +44,13 @@ dd {
   padding-right: 10px;
   padding-bottom: 10px;
   max-width: 500px;
-  /* min-width: 30rem; */
 }
 
-.articles_list {
-  /* display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-  list-style-type: none;
-  width:100% */
- 
-}
 
 .container {
   margin: 0 auto;
   width: 80%;
+  max-width: 500px;
 }
 
 .article_card_title {
@@ -76,8 +67,6 @@ dd {
   font-weight: bold;
   font-family:monospace;
   font-size: 14px;
-
-
 }
 
 
