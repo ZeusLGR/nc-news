@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as api from '../utils/api'
+import moment from 'moment';
+moment().format();
 
 export default function SingleArticle() {
 
@@ -20,7 +22,7 @@ export default function SingleArticle() {
         return <p>Loading...</p>;
     }
 
-    const datePosted = moment(`${currentArticle.created_at}`).utc().format('MM/DD/YYYY')
+    const datePosted = moment(`${currentArticle.created_at}`).startOf('day').fromNow();
 
     return (
         <div className="container">
@@ -28,8 +30,8 @@ export default function SingleArticle() {
 
           <span className="field1">
           <span className="article_card_topic">{currentArticle.topic} • </span>
-          <span className="article_posted_by">posted by {currentArticle.author}</span>
-          <span className="article_posted_by"> at {currentArticle.created_at}</span>
+          <span className="article_posted_by">posted by {currentArticle.author} • </span>
+          <span className="article_posted_by"> {datePosted}</span>
         </span>
 
         <h3 className="article_card_title">{currentArticle.title}</h3>

@@ -15,3 +15,21 @@ export const fetchArticleById = (articleId) => {
     return res.data
   })
 }  
+
+export const fetchPopularCodingArticles = () => {
+  return newsApi.get(`/articles?topic=coding&sort_by=votes`).then((res) => {
+    return res.data
+  })
+}
+
+export const fetchPopularFootballArticles = () => {
+  return newsApi.get(`/articles?topic=football&sort_by=votes`).then((res) => {
+    return res.data
+  })
+}
+
+export const fetchPopularCookingArticles = () => {
+  return newsApi.get(`/articles?topic=cooking&sort_by=votes`).then((res) => {
+    return res.data
+  })
+}

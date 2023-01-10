@@ -61,6 +61,7 @@ dd {
 .text_link {
   text-decoration: none;
   color: inherit;
+  margin: auto 5px auto 5px
 }
 
 .article_card_title {
@@ -96,3 +97,10 @@ dd {
   margin: 20px 0px 20px 0px;
 }
 
+.comment_icon {
+  size: 10px;
+}
+
+.home_header {
+  margin-bottom: 10px;
+}
