@@ -33,6 +33,10 @@ dd {
   margin-top: 10px;
 }
 
+.nav_button {
+  cursor: pointer;;
+}
+
 .article_card {
   margin-bottom: 20px;
   color: black;
@@ -44,6 +48,7 @@ dd {
   padding-right: 10px;
   padding-bottom: 10px;
   max-width: 500px;
+  cursor: pointer;
 }
 
 
@@ -53,14 +58,24 @@ dd {
   max-width: 500px;
 }
 
+.text_link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .article_card_title {
   font-weight: bold;
   padding-top: 20px;
   }
 
-.article_card_author {
+.article_card_title:hover {
+  font-style: oblique;
+}  
+
+.article_posted_by {
   font-size: 14px;
   color: #7e808f;
+  text-align: left;
 }
 
 .article_card_topic {
@@ -75,5 +90,9 @@ dd {
   font-size: 11px;
   font-weight: bold;
   color: #7e808f;
+}
+
+.article_body {
+  margin: 20px 0px 20px 0px;
 }
 
