@@ -24,7 +24,7 @@ export default function ArticlesList() {
     return (
         <div className='container'>
             {articlesList.map((article) => {
-           return <p key={article.article_id}><ArticleCard article={article}/></p>
+           return <ArticleCard key={article.article_id} article={article}/>
         })}
         </div>
     )
