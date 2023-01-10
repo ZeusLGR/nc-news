@@ -12,7 +12,6 @@ export default function ArticlesList() {
     useEffect(() => {
         setIsLoading(true);
         api.fetchArticlesList().then((data) => {
-            console.log(data)
             setArticlesList(data.articles);
             setIsLoading(false);
         })
@@ -23,11 +22,10 @@ export default function ArticlesList() {
       }
 
     return (
-        <div>
-            <ul className="articlesList">{articlesList.map((article) => {
-           return <li key={article.article_id}><ArticleCard article={article}/></li>
+        <div className='container'>
+            {articlesList.map((article) => {
+           return <p key={article.article_id}><ArticleCard article={article}/></p>
         })}
-        </ul>
         </div>
     )
 }
