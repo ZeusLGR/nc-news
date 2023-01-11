@@ -9,7 +9,8 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const [popularCodingArticle, setPopularCodingArticle] = useState([]);
     const [popularFootballArticle, setPopularFootballArticle] = useState([]);
-    const [popularCookingArticle, setPopularCookingArticle] = useState([])
+    const [popularCookingArticle, setPopularCookingArticle] = useState([]);
+    const [popularArticles, setPopularArticles] = useState([]);
 
     useEffect(() => {
         api.fetchPopularCodingArticles().then((data) => {
