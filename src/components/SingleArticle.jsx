@@ -1,3 +1,5 @@
+import Vote from "./Vote";
+import { FaRegCommentDots } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as api from '../utils/api'
@@ -37,8 +39,10 @@ export default function SingleArticle() {
           <h3 className="article_card_title">{currentArticle.title}</h3>
           <p className="article_body">{currentArticle.body}</p>
         
-          <p className="article_card_comments">{currentArticle.comment_count} comments</p>
-        
+          <span>
+          <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments <Vote votes={currentArticle.votes}/> </span>
+          </span>
+          
         </div>
         </div>
     )
