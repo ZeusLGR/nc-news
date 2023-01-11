@@ -54,7 +54,18 @@ export const fetchPopularArticles = () => {
     for(let i = 0; i < res.length; i++) {
       popularArticles.push(res[i].data.articles[0])
     }
-    console.log(popularArticles)
     return popularArticles
   })
 };
+
+export const fetchArticleComments = (articleId) => {
+  return newsApi.get(`/articles/${articleId}/comments`).then((res) => {
+    return res.data
+  })
+}
+
+export const fetchUsers = () => {
+  return newsApi.get(`/users`).then((res) => {
+    return res.data
+  })
+}

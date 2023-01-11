@@ -34,7 +34,22 @@ dd {
 }
 
 .nav_button {
-  cursor: pointer;;
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  width: 11rem;
+  background: transparent;
+  color: #088f96;
+  border: 2px solid #088f96;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.nav_button:hover {
+  background: fixed;
+  background-color: #088f96;
+  color: white;
 }
 
 .article_card {
@@ -49,7 +64,6 @@ dd {
   padding-bottom: 10px;
   max-width: 500px;
 }
-
 
 .container {
   margin: 0 auto;
@@ -103,4 +117,42 @@ dd {
 
 .home_header {
   margin-bottom: 10px;
+}
+
+.comment_card {
+  margin-bottom: 20px;
+  color: black;
+  border-bottom: 5px;
+  /* border-top: 0px;
+  border-left: 0px; */
+  border-color: #088f96;
+  border-style:solid;
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  max-width: 500px;
+}
+
+.comment_posted_by {
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+
+.comment_date_posted {
+  font-size: 14px;
+  color: #7e808f;
+  text-align: left;
+}
+
+.comment_body {
+  margin: 20px 0px 20px 0px;
+}
+
+.user_avatar {
+  height: 30px;
+  width: auto;
+  margin: 5px 5px 0px 2px;
 }
