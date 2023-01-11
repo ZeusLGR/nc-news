@@ -33,6 +33,10 @@ dd {
   margin-top: 10px;
 }
 
+.nav_button {
+  cursor: pointer;;
+}
+
 .article_card {
   margin-bottom: 20px;
   color: black;
@@ -53,14 +57,26 @@ dd {
   max-width: 500px;
 }
 
+.text_link {
+  text-decoration: none;
+  color: inherit;
+  margin: auto 5px auto 5px
+}
+
 .article_card_title {
   font-weight: bold;
   padding-top: 20px;
   }
 
-.article_card_author {
+.article_card_title:hover {
+  font-style: oblique;
+  cursor: pointer;
+}  
+
+.article_posted_by {
   font-size: 14px;
   color: #7e808f;
+  text-align: left;
 }
 
 .article_card_topic {
@@ -77,3 +93,14 @@ dd {
   color: #7e808f;
 }
 
+.article_body {
+  margin: 20px 0px 20px 0px;
+}
+
+.comment_icon {
+  size: 10px;
+}
+
+.home_header {
+  margin-bottom: 10px;
+}
