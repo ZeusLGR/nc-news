@@ -29,15 +29,15 @@ export default function SingleArticle() {
         <div className="article_card">
 
           <span className="field1">
-          <span className="article_card_topic">{currentArticle.topic} • </span>
-          <span className="article_posted_by">posted by {currentArticle.author} • </span>
-          <span className="article_posted_by"> {datePosted}</span>
-        </span>
+            <span className="article_card_topic">{currentArticle.topic} • </span>
+            <span className="article_posted_by">posted by {currentArticle.author} • </span>
+            <span className="article_posted_by"> {datePosted}</span>
+          </span>
 
-        <h3 className="article_card_title">{currentArticle.title}</h3>
-        <p className="article_body">{currentArticle.body}</p>
+          <h3 className="article_card_title">{currentArticle.title}</h3>
+          <p className="article_body">{currentArticle.body}</p>
         
-        <p className="article_card_comments">{currentArticle.comment_count} comments</p>
+          <p className="article_card_comments">{currentArticle.comment_count} comments</p>
         
         </div>
         </div>
