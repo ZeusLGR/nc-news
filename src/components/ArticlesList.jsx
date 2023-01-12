@@ -1,8 +1,6 @@
 import * as api from '../utils/api'
 import { useState, useEffect } from "react";
 import ArticleCard from './ArticleCard';
-import SortArticles from './SortArticles';
-import { Link } from 'react-router-dom';
 
 
 export default function ArticlesList() {

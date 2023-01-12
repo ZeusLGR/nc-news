@@ -2,6 +2,7 @@ import Vote from "./Vote";
 import { FaRegCommentDots } from "react-icons/fa";
 import CommentsList from "./CommentsList";
 import { useEffect, useState } from "react";
+import PostComment from "./PostComment";
 import { useParams } from "react-router-dom";
 import * as api from '../utils/api'
 import moment from 'moment';
@@ -44,6 +45,9 @@ export default function SingleArticle() {
           <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments </span> 
           <span><Vote votes={currentArticle.votes}/></span>
           </span>
+          <div className="post_comment_container">
+          <PostComment/>
+          </div>
 
         </div>
           <CommentsList />
