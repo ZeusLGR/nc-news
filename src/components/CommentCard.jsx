@@ -17,7 +17,7 @@ export default function CommentCard({comment}) {
                 }
             })
         })
-    }, [])
+    }, [comment.author])
 
 
    const datePosted = moment(`${comment.created_at}`).startOf('day').fromNow();

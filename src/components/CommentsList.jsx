@@ -15,7 +15,7 @@ export default function CommentsList() {
             setCommentsList(data.comments)
             setIsLoading(false)
         })
-    }, [])
+    }, [article_id])
 
     if (isLoading) {
       return <p>Loading...</p>;

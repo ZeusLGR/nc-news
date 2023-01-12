@@ -18,7 +18,7 @@ export default function SingleArticle() {
             setCurrentArticle(data.article);
             setIsLoading(false);
         })
-    }, [])
+    }, [article_id])
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -44,9 +44,6 @@ export default function SingleArticle() {
           <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments </span> 
           <span><Vote votes={currentArticle.votes}/></span>
           </span>
-          
-
-          <p className="article_card_comments">{currentArticle.comment_count} comments</p>
 
         </div>
           <CommentsList />
