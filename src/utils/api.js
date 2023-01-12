@@ -41,7 +41,7 @@ export const fetchTopics = () => {
 };
 
 export const fetchPopularArticles = () => {
-  fetchTopics()
+  return fetchTopics()
   .then((data) => {
     const pop = data.topics.map((topic) => {
       return newsApi
@@ -54,6 +54,7 @@ export const fetchPopularArticles = () => {
     for(let i = 0; i < res.length; i++) {
       popularArticles.push(res[i].data.articles[0])
     }
+    
     return popularArticles
   })
 };

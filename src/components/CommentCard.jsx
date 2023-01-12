@@ -6,22 +6,16 @@ moment().format();
 
 export default function CommentCard({comment}) {
 
-    const [users, setUsers] = useState([]);
     const [userAvatar, setUserAvatar] = useState("")
 
     useEffect(() => {
         api.fetchUsers()
         .then((data) => {
-            setUsers(data.users);
-            return users.filter((user) => {
+            return data.users.forEach((user) => {
                 if(user.username === comment.author) {
-                    return user
+                    setUserAvatar(user.avatar_url);
                 }
             })
-        })
-        .then((avatar) => {
-         
-            setUserAvatar(avatar[0].avatar_url);
         })
     }, [])
 
