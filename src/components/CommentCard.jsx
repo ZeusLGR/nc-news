@@ -20,7 +20,7 @@ export default function CommentCard({comment}) {
             })
         })
         .then((avatar) => {
-            
+         
             setUserAvatar(avatar[0].avatar_url);
         })
     }, [])
