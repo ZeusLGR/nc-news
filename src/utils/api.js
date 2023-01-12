@@ -41,7 +41,7 @@ export const fetchTopics = () => {
 };
 
 export const fetchPopularArticles = () => {
-  fetchTopics()
+  return fetchTopics()
   .then((data) => {
     const pop = data.topics.map((topic) => {
       return newsApi
@@ -61,3 +61,16 @@ export const fetchPopularArticles = () => {
 export const patchArticleVotes = (articleId, voteUpdate) => {
   return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {return res.data})
 }
+
+export const fetchArticleComments = (articleId) => {
+  return newsApi.get(`/articles/${articleId}/comments`).then((res) => {
+    return res.data
+  })
+}
+
+export const fetchUsers = () => {
+  return newsApi.get(`/users`).then((res) => {
+    return res.data
+  })
+}
+

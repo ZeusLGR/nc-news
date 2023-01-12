@@ -24,7 +24,17 @@ dd {
 }
 
 .header {
+  display: flex;
+  align-items: center;
   width: 100%;
+  justify-content: center;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+  height: 100px;
 }
 
 .nav {
@@ -155,9 +165,13 @@ dd {
 }
 
 .user_avatar {
+  display: flex;
+  align-items: center;
   height: 30px;
   width: auto;
   margin: 5px 5px 0px 2px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .votes_text {
@@ -238,6 +252,4 @@ dd {
   font-style: italic;
   color: red;
   margin-left: 20px ;
-  
-
 }
