@@ -54,10 +54,13 @@ export const fetchPopularArticles = () => {
     for(let i = 0; i < res.length; i++) {
       popularArticles.push(res[i].data.articles[0])
     }
-    
     return popularArticles
   })
 };
+
+export const patchArticleVotes = (articleId, voteUpdate) => {
+  return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {return res.data})
+}
 
 export const fetchArticleComments = (articleId) => {
   return newsApi.get(`/articles/${articleId}/comments`).then((res) => {
@@ -70,3 +73,4 @@ export const fetchUsers = () => {
     return res.data
   })
 }
+

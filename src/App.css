@@ -81,6 +81,12 @@ dd {
   max-width: 500px;
 }
 
+.single_article_bottom_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .text_link {
   text-decoration: none;
   color: inherit;
@@ -111,7 +117,6 @@ dd {
 
 
 .article_card_comments {
-  margin-top: 10px;
   font-size: 11px;
   font-weight: bold;
   color: #7e808f;
@@ -133,7 +138,6 @@ dd {
   margin-bottom: 20px;
   color: black;
   border-bottom: 5px;
-
   border-color: #088f96;
   border-style:solid;
   text-align: justify;
@@ -168,5 +172,84 @@ dd {
   margin: 5px 5px 0px 2px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.votes_text {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 15px;
+  color: black;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
  
+}
+
+.vote_component {
+  display: flex;
+}
+
+.comment_icon {
+  height: 10px;
+}
+
+.vote_article_button{
+  position: relative;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #088f96;
+  padding: 0.2em 0.4em;
+  cursor:pointer;
+  user-select:none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; 
+}
+
+.vote_article_button:hover {
+  transition-duration: 0.1s;
+  background-color: #088f96;
+  color: white;
+  border-radius: 50%;
+}
+
+.vote_article_button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px #088f96
+}
+
+.vote_article_button:active:after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 50%;
+  left: 0;
+  top:0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.vote_article_button:active {
+  top: 1px;
+}
+
+.error {
+  display: flex;
+  justify-items: center;
+  text-align: center;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: italic;
+  color: red;
+  margin-left: 20px ;
 }
