@@ -54,7 +54,12 @@ export const fetchPopularArticles = () => {
     for(let i = 0; i < res.length; i++) {
       popularArticles.push(res[i].data.articles[0])
     }
-    console.log(popularArticles)
     return popularArticles
   })
 };
+
+export const patchArticleVotes = (articleId, voteUpdate) => {
+console.log(articleId)
+console.log(voteUpdate)
+  return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {return res.data})
+}

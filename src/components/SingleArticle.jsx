@@ -16,9 +16,8 @@ export default function SingleArticle() {
         api.fetchArticleById(article_id).then((data) => {
             setCurrentArticle(data.article);
             setIsLoading(false);
-        }, [])
-
-    })
+        })
+    }, [])
 
     if (isLoading) {
         return <p>Loading...</p>;
@@ -39,8 +38,9 @@ export default function SingleArticle() {
           <h3 className="article_card_title">{currentArticle.title}</h3>
           <p className="article_body">{currentArticle.body}</p>
         
-          <span>
-          <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments <Vote votes={currentArticle.votes}/> </span>
+          <span className="single_article_bottom_container">
+          <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments </span> 
+          <span><Vote votes={currentArticle.votes}/></span>
           </span>
           
         </div>
