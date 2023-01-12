@@ -59,7 +59,5 @@ export const fetchPopularArticles = () => {
 };
 
 export const patchArticleVotes = (articleId, voteUpdate) => {
-console.log(articleId)
-console.log(voteUpdate)
   return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {return res.data})
 }
