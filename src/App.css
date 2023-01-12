@@ -24,7 +24,17 @@ dd {
 }
 
 .header {
+  display: flex;
+  align-items: center;
   width: 100%;
+  justify-content: center;
+}
+
+.header_logo {
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+  height: 100px;
 }
 
 .nav {
