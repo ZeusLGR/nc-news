@@ -1,4 +1,3 @@
-import Vote from "./Vote";
 import { FaRegCommentDots } from "react-icons/fa";
 import { Link } from "react-router-dom"
 import moment from 'moment';
@@ -6,7 +5,7 @@ moment().format();
 
 export default function ArticleCard({article}) {
 
-    const datePosted = moment(`${article.created_at}`).startOf('day').fromNow();
+    const datePosted = moment(`${article.created_at}`).calendar();
 
     return <div className="article_card">
         

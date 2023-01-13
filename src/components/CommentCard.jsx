@@ -20,7 +20,7 @@ export default function CommentCard({comment, setCommentsList}) {
     }, [comment.author])
 
 
-   const datePosted = moment(`${comment.created_at}`).startOf('hour').fromNow();
+   const datePosted = moment(`${comment.created_at}`).calendar();
 
     return (
         <div className='comment_card'>
