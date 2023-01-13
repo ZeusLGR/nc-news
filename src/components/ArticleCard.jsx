@@ -1,3 +1,4 @@
+import Vote from "./Vote";
 import { FaRegCommentDots } from "react-icons/fa";
 import { Link } from "react-router-dom"
 import moment from 'moment';
@@ -16,7 +17,7 @@ export default function ArticleCard({article}) {
         </span>
 
         <Link className="text_link" to={`/articles/${article.article_id}`}><h3 className="article_card_title">{article.title}</h3></Link>
-
+        
         <p className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {article.comment_count} comments</p>
 
     </div>

@@ -4,10 +4,9 @@ import { useEffect, useState } from "react";
 import * as api from '../utils/api'
 
 
-export default function CommentsList() {
+export default function CommentsList({commentsList, setCommentsList}) {
 
     const {article_id} = useParams();
-    const [commentsList, setCommentsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -24,8 +23,8 @@ export default function CommentsList() {
     return (
         <div className="container">
           {commentsList.map((comment) => {
-            return <CommentCard key={comment.comment_id} comment={comment}/>
-          })}
+            return <CommentCard key={comment.comment_id} comment={comment} setCommentsList={setCommentsList}/>
+          }).reverse()}
         </div>
     )
 }

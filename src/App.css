@@ -97,6 +97,15 @@ select:focus {
   justify-content: space-between;
 }
 
+.post_comment_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 500px;
+}
+
 .text_link {
   text-decoration: none;
   color: inherit;
@@ -124,7 +133,6 @@ select:focus {
   font-family:monospace;
   font-size: 14px;
 }
-
 
 .article_card_comments {
   font-size: 11px;
@@ -185,6 +193,7 @@ select:focus {
 }
 
 .votes_text {
+  display: flex;
   font-weight: bold;
   font-family: monospace;
   font-size: 15px;
@@ -263,3 +272,60 @@ select:focus {
   color: red;
   margin-left: 20px ;
 }
+
+#comments-button-disabled {
+  margin-top: 5px;
+  cursor: not-allowed;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px 8px 15px;
+  font-weight: bold;
+  background-color: #7e808f;
+  color: #c8c8c8;
+  border-color: white;
+  border-radius: 20px;
+  border: 0px;
+}
+
+#comments-button-enabled {
+  margin-top: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 8px 15px 8px 15px;
+  font-weight: bold;
+  background-color: #088f96;
+  color: white;
+  border-color: white;
+  border-radius: 20px;
+  border: 0px;
+
+}
+
+.post_comment_box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-height: 200px;
+  height: 100%;
+  max-width: 400px;
+  width: 90%;
+
+}
+
+.comment_input {
+  display: flex;
+  flex-wrap: wrap;
+  height: 12em;
+  max-width: 500px;;
+  width: 21em;
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  outline: none;
+  resize:none
+}
+
