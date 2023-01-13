@@ -1,7 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import * as api from '../utils/api'
 
 export default function Nav() {
+
+    const [menuTopics, setMenuTopics] = useState([]);
+
+    useEffect(() => {
+        api.fetchTopics().then(({topics}) => {
+            setMenuTopics(topics);
+        })
+    })
 
 const navigate = useNavigate();
 
@@ -13,15 +23,10 @@ const navigate = useNavigate();
 
         <span>
             <select onChange={(e) => navigate(`${e.target.value}/articles`)} className='nav_button'>
-                
-                <option selected hidden>Topics</option>
-                <option value="coding" className='text_link' >Coding
-            </option>
-                <option value="cooking" className='text_link' >Cooking
-                </option>
-                <option value="football" className='text_link' >Football
-                </option>
-            
+            <option selected hidden>Topics</option>
+                {menuTopics.map((topic) => {
+                    return <option value={topic.slug} className="text_link">{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</option>
+                })}
             </select>
         </span>
 
