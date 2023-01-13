@@ -5,7 +5,7 @@ const newsApi = axios.create({
 });
 
 export const fetchArticlesList = (topic) => {
-  return newsApi.get(topic ? `/articles?topic=${topic}` : `/articles`).then((res) => {
+  return newsApi.get("/articles", { params: { topic: topic } }).then((res) => {
     return res.data;
   });
 };
@@ -42,35 +42,35 @@ export const fetchTopics = () => {
 
 export const fetchPopularArticles = () => {
   return fetchTopics()
-  .then((data) => {
-    const pop = data.topics.map((topic) => {
-      return newsApi
-        .get(`/articles?topic=${topic.slug}&sort_by=votes`)
+    .then((data) => {
+      const pop = data.topics.map((topic) => {
+        return newsApi.get(`/articles?topic=${topic.slug}&sort_by=votes`);
+      });
+      return Promise.all(pop);
+    })
+    .then((res) => {
+      const popularArticles = [];
+      for (let i = 0; i < res.length; i++) {
+        popularArticles.push(res[i].data.articles[0]);
+      }
+      return popularArticles;
     });
-    return Promise.all(pop)
-  })
-  .then((res) => {
-    const popularArticles =  []
-    for(let i = 0; i < res.length; i++) {
-      popularArticles.push(res[i].data.articles[0])
-    }
-    return popularArticles
-  })
 };
 
 export const patchArticleVotes = (articleId, voteUpdate) => {
-  return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {return res.data})
-}
+  return newsApi.patch(`/articles/${articleId}`, voteUpdate).then((res) => {
+    return res.data;
+  });
+};
 
 export const fetchArticleComments = (articleId) => {
   return newsApi.get(`/articles/${articleId}/comments`).then((res) => {
-    return res.data
-  })
-}
+    return res.data;
+  });
+};
 
 export const fetchUsers = () => {
   return newsApi.get(`/users`).then((res) => {
-    return res.data
-  })
-}
-
+    return res.data;
+  });
+};
