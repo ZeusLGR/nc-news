@@ -57,8 +57,8 @@ export const fetchUsers = () => {
 }
 
 export const postComment = (articleId, newComment) => {
-  return newsApi.post(`/articles/${articleId}/comments`, newComment).then(({}) => {
-    
+  return newsApi.post(`/articles/${articleId}/comments`, newComment).then(({data}) => {
+    return data
   })
 }
 

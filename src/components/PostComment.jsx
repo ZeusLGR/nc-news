@@ -4,7 +4,7 @@ import * as api from '../utils/api'
 import { useParams } from "react-router-dom";
 
 
-export default function PostComment() {
+export default function PostComment({setCommentsList}) {
 
     const [commentText, setCommentText] = useState(""); 
     const [currentUser, setCurrentUser] = useState("grumpy19");
@@ -21,13 +21,15 @@ export default function PostComment() {
             username: currentUser,
             body: commentText
         };
-        api.postComment(article_id, postRequest).then(() => {
-            setCommentText("Your comment post was successful!")
+        api.postComment(article_id, postRequest).then(({comment}) => {
+            setCommentText("");
+            setCommentsList((currCommentsList) => {
+                return [...currCommentsList, comment]
+            });
         })
         .catch((err) => {
             setError({err});
         })
-
     }
 
     function changeCommentButtonStyle() {
@@ -39,11 +41,11 @@ export default function PostComment() {
     }    
 
     return (
-       <form className="post_comment_box" onSubmit={  handleSubmit}>
-        <input value={commentText} onChange={handleCommentText} type="text" 
-          placeholder="What do you think?" className="comment_input"/>
+       <form className="post_comment_box" onSubmit={handleSubmit}>
+        <textarea cols="40" rows="5" value={commentText} onChange={handleCommentText} type="text" 
+          placeholder="What do you think?" className="comment_input"></textarea>
 
-        <button type="submit" className="post_comment_button" id={changeCommentButtonStyle()} disabled={!commentText}>Comment</button>
+        <button type="submit" name="submitButton" className="post_comment_button" id={changeCommentButtonStyle()} disabled={!commentText}>Comment</button>
 
        </form>
     )

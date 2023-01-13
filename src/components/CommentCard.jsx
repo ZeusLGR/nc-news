@@ -4,7 +4,7 @@ import moment from 'moment';
 moment().format();
 
 
-export default function CommentCard({comment}) {
+export default function CommentCard({comment, setCommentsList}) {
 
     const [userAvatar, setUserAvatar] = useState("")
 

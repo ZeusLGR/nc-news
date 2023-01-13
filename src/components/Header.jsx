@@ -1,4 +1,4 @@
-import newsLogo from "/Users/lee/northcoders/frontend/nc-news/src/images/NCNews.png"
+import newsLogo from "../images/NCNews.png"
 
 
 export default function Header() {

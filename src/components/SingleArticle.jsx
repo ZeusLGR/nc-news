@@ -12,6 +12,7 @@ export default function SingleArticle() {
 
     const {article_id} = useParams()
     const [currentArticle, setCurrentArticle] = useState({})
+    const [commentsList, setCommentsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
@@ -46,11 +47,11 @@ export default function SingleArticle() {
           <span><Vote votes={currentArticle.votes}/></span>
           </span>
           <div className="post_comment_container">
-          <PostComment/>
+          <PostComment setCommentsList={setCommentsList}/>
           </div>
 
         </div>
-          <CommentsList />
+          <CommentsList commentsList={commentsList} setCommentsList={setCommentsList}/>
         </div>
     )
 }
