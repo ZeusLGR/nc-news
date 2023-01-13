@@ -23,6 +23,16 @@ dd {
   margin: 0;
 }
 
+select {
+  border:none;
+  -webkit-appearance: none;
+  text-align: center;
+}
+
+select:focus {
+  outline:0;
+}
+
 .header {
   display: flex;
   align-items: center;

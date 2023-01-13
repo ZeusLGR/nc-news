@@ -1,22 +1,21 @@
 import * as api from '../utils/api'
 import { useState, useEffect } from "react";
 import ArticleCard from './ArticleCard';
-import SortArticles from './SortArticles';
-import { Link } from 'react-router-dom';
-
+import { useParams } from 'react-router-dom';
 
 export default function ArticlesList() {
 
     const [isLoading, setIsLoading] = useState(true);
     const [articlesList, setArticlesList] = useState([]);
+    const {topic} = useParams();
 
     useEffect(() => {
         setIsLoading(true);
-        api.fetchArticlesList().then((data) => {
+        api.fetchArticlesList(topic).then((data) => {
             setArticlesList(data.articles);
             setIsLoading(false);
         })
-    }, [])
+    }, [topic])
     
     if (isLoading) {
         return <p>Loading...</p>;
