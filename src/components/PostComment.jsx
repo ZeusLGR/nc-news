@@ -7,22 +7,26 @@ import { useParams } from "react-router-dom";
 export default function PostComment({setCommentsList}) {
 
     const [commentText, setCommentText] = useState(""); 
+    const [textToPost, setTextToPost] = useState("");
     const [currentUser, setCurrentUser] = useState("grumpy19");
     const [error, setError] = useState(null);
     const {article_id} = useParams();
 
     function handleCommentText(e) {
         setCommentText(e.target.value);
+        setTextToPost(e.target.value);
     }
 
     function handleSubmit(e) {
         e.preventDefault();
+        setCommentText("");
+
         const postRequest = {
             username: currentUser,
-            body: commentText
+            body: textToPost
         };
         api.postComment(article_id, postRequest).then(({comment}) => {
-            setCommentText("");
+            
             setCommentsList((currCommentsList) => {
                 return [...currCommentsList, comment]
             });
