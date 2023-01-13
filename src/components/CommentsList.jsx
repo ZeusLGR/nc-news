@@ -25,7 +25,7 @@ export default function CommentsList() {
         <div className="container">
           {commentsList.map((comment) => {
             return <CommentCard key={comment.comment_id} comment={comment}/>
-          })}
+          }).reverse()}
         </div>
     )
 }
