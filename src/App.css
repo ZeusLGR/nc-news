@@ -316,5 +316,6 @@ dd {
   border-color: black;
   text-align: center;
   outline: none;
+  resize:none
 }
 

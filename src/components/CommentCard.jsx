@@ -1,7 +1,7 @@
 import * as api from '../utils/api'
 import { useEffect, useState } from 'react';
 import moment from 'moment';
-moment().format();
+moment.utc().format();
 
 
 export default function CommentCard({comment, setCommentsList}) {
@@ -20,7 +20,7 @@ export default function CommentCard({comment, setCommentsList}) {
     }, [comment.author])
 
 
-   const datePosted = moment(`${comment.created_at}`).startOf('day').fromNow();
+   const datePosted = moment(`${comment.created_at}`).startOf('hour').fromNow();
 
     return (
         <div className='comment_card'>
