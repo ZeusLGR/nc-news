@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as api from '../utils/api'
 
-export default function Nav() {
+export default function Nav({setSelectedSortBy}) {
 
     const [menuTopics, setMenuTopics] = useState([]);
     const [selected, setSelected] = useState("Topics")
@@ -21,7 +21,8 @@ const navigate = useNavigate();
         <span><Link className='text_link' to="/"><button className='nav_button'>Home</button></Link> </span>
 
         <span> <Link className='text_link' to="/all_articles" onClick={() => {
-            setSelected("Topics")
+            setSelected("Topics");
+            setSelectedSortBy("created_at");
         }}><button className='nav_button'>View All Articles</button></Link></span>
 
         <span>

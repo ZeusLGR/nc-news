@@ -106,6 +106,12 @@ select:focus {
   max-width: 500px;
 }
 
+.sort_articles_container {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
 .text_link {
   text-decoration: none;
   color: inherit;
@@ -327,5 +333,25 @@ select:focus {
   text-align: center;
   outline: none;
   resize:none
+}
+
+.sort_by_button {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 0.3rem;
+  margin: 0.5rem 0.2rem;
+  width: 5rem;
+  background: transparent;
+  color: #088f96;
+  border: 2px solid #088f96;
+  cursor: pointer;
+  font-weight: bold;
+  font-style: italic;
+}
+  
+.sort_by_button:hover {
+  background: fixed;
+  background-color: #088f96;
+  color: white;
 }
 
