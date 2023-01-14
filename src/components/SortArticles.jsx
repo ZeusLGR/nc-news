@@ -15,7 +15,7 @@ export default function SortArticles({setSortBy, setOrderBy}) {
         </select>
 
         <select value="" onChange={(e) => setOrderBy(e.target.value)} className='sort_by_button'>
-            <option value="" disabled>Order By</option>
+            <option value="" disabled>Order</option>
             <option value="desc">Descending</option>
             <option value="asc">Ascending</option>
         </select>

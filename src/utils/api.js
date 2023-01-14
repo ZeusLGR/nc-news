@@ -5,10 +5,13 @@ const newsApi = axios.create({
 });
 
 export const fetchArticlesList = (topic, sortBy, orderBy) => {
-  return newsApi.get("/articles", { params: { topic: topic,
-  sort_by: sortBy, order: orderBy } }).then((res) => {
-    return res.data;
-  });
+  return newsApi
+    .get("/articles", {
+      params: { topic: topic, sort_by: sortBy, order: orderBy },
+    })
+    .then((res) => {
+      return res.data;
+    });
 };
 
 export const fetchArticleById = (articleId) => {
@@ -59,7 +62,13 @@ export const fetchUsers = () => {
 };
 
 export const postComment = (articleId, newComment) => {
-  return newsApi.post(`/articles/${articleId}/comments`, newComment).then(({data}) => {
-    return data;
-  });
+  return newsApi
+    .post(`/articles/${articleId}/comments`, newComment)
+    .then(({ data }) => {
+      return data;
+    });
+};
+
+export const deleteComment = (commentId) => {
+  return newsApi.delete(`/comments/${commentId}`).then(() => {});
 };
