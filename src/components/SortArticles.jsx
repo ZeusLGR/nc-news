@@ -9,7 +9,7 @@ export default function SortArticles({setSortBy, setOrderBy}) {
             <option value="topic">Topic</option>
             <option value="author">Username</option>
             <option value="created_at">Date</option>
-            <option value="votes">Votes</option>
+            <option value="votes">Likes</option>
             <option value="comment_count">Comment count</option>
 
         </select>

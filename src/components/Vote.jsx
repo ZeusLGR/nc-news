@@ -32,7 +32,7 @@ return (
             <button className="vote_article_button" onClick={() => {
                 vote(1)
             }}><FaRegArrowAltCircleUp/></button></span>
-            <span className="votes_text">{votes + voteChange} Votes</span>
+            <span className="votes_text">{votes + voteChange} Likes</span>
             <span><button className="vote_article_button" onClick={() => {
                 vote(-1)}}><FaRegArrowAltCircleDown/></button></span>
             </span>

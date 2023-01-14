@@ -17,7 +17,10 @@ export default function ArticleCard({article}) {
 
         <Link className="text_link" to={`/articles/${article.article_id}`}><h3 className="article_card_title">{article.title}</h3></Link>
         
+        <div className="single_article_bottom_container">
         <p className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {article.comment_count} comments</p>
+        <p className="votes_text">{article.votes} Likes</p>
+        </div>
 
     </div>
     
