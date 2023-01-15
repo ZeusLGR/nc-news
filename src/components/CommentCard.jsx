@@ -42,6 +42,10 @@ export default function CommentCard({comment, setCommentsList}) {
 
    const datePosted = moment(`${comment.created_at}`).calendar();
 
+   function changeCommentButtonStyle() {
+    return (commentToDelete ? "delete_comment_button_disabled" : "delete_comment_button_enabled");
+}
+
     return (
         <div className='comment_card'>
           
@@ -52,7 +56,7 @@ export default function CommentCard({comment, setCommentsList}) {
           <span className="comment_date_posted">• {datePosted}</span>
           </div>
           <span>
-            {comment.author === "grumpy19" ? <button onClick={() => {setCommentToDelete(comment.comment_id)}} className="delete_comment_button" >Delete</button> : null }
+            {comment.author === "grumpy19" ? <button onClick={() => {setCommentToDelete(comment.comment_id)}} className={changeCommentButtonStyle()}disabled={commentToDelete}>Delete</button> : null }
             </span>
         </span>
 
