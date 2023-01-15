@@ -3,6 +3,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import CommentsList from "./CommentsList";
 import { useEffect, useState } from "react";
 import PostComment from "./PostComment";
+import ErrorComponent from "./ErrorComponent";
 import { useParams } from "react-router-dom";
 import * as api from '../utils/api'
 import moment from 'moment';
@@ -10,21 +11,30 @@ moment().format();
 
 export default function SingleArticle() {
 
-    const {article_id} = useParams()
-    const [currentArticle, setCurrentArticle] = useState({})
+    const {article_id} = useParams();
+    const [currentArticle, setCurrentArticle] = useState({});
     const [commentsList, setCommentsList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         api.fetchArticleById(article_id).then((data) => {
             setCurrentArticle(data.article);
             setIsLoading(false);
         })
+        .catch((err) => {
+          setError({err});
+          setIsLoading(false);
+        })
     }, [article_id])
 
     if (isLoading) {
         return <p>Loading...</p>;
     }
+
+    if (error) {
+      return <ErrorComponent message={error.err.response.data.msg}/>
+  } 
 
     const datePosted = moment(`${currentArticle.created_at}`).startOf('day').fromNow();
 

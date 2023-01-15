@@ -1,5 +1,6 @@
 import * as api from '../utils/api'
 import SortArticles from './SortArticles';
+import ErrorComponent from './ErrorComponent';
 import { useState, useEffect } from "react";
 import ArticleCard from './ArticleCard';
 import { useParams } from 'react-router-dom';
@@ -10,6 +11,7 @@ export default function ArticlesList({selectedSortBy}) {
     const [articlesList, setArticlesList] = useState([]);
     const [sortBy, setSortBy] = useState(selectedSortBy);
     const [orderBy, setOrderBy] = useState("desc")
+    const [error, setError] = useState(null);
     const {topic} = useParams();
 
     useEffect(() => {
@@ -18,11 +20,19 @@ export default function ArticlesList({selectedSortBy}) {
             setArticlesList(data.articles);
             setIsLoading(false);
         })
+        .catch((err) => {
+            setError({err});
+            setIsLoading(false);
+        })
     }, [topic, sortBy, orderBy])
     
     if (isLoading) {
         return <p>Loading...</p>;
       }
+
+    if (error) {
+        return <ErrorComponent message={error.err.response.data.msg}/>
+    }     
 
     return (
         <div className='container'>
