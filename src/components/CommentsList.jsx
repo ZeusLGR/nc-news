@@ -21,10 +21,10 @@ export default function CommentsList({commentsList, setCommentsList}) {
   }
 
     return (
-        <div className="container">
+        <section className="container">
           {commentsList.map((comment) => {
             return <CommentCard key={comment.comment_id} comment={comment} setCommentsList={setCommentsList}/>
           }).reverse()}
-        </div>
+        </section>
     )
 }

@@ -161,7 +161,9 @@ select:focus {
 }
 
 .home_header {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  font-variant: small-caps;
+  font-size: 25px;
 }
 
 .comment_card {

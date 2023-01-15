@@ -35,13 +35,15 @@ export default function ArticlesList({selectedSortBy}) {
     }     
 
     return (
-        <div className='container'>
-            <div className='sort_articles_container'>
+        <main className='container'>
+            <section className='sort_articles_container'>
                 <SortArticles setSortBy={setSortBy} setOrderBy={setOrderBy}/>
-            </div>
-            {articlesList.map((article) => {
-           return <ArticleCard key={article.article_id} article={article}/>
-        })}
-        </div>
+            </section>
+            <section>
+              {articlesList.map((article) => {
+             return <ArticleCard key={article.article_id} article={article}/>
+            })}
+            </section>
+        </main>
     )
 }

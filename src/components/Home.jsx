@@ -7,7 +7,6 @@ import ArticleCard from './ArticleCard';
 export default function Home() {
 
     const [isLoading, setIsLoading] = useState(true);
-   
     const [popularArticles, setPopularArticles] = useState([]);
 
     useEffect(() => {
@@ -23,13 +22,13 @@ export default function Home() {
       }
 
     return (
-        <div>
-        <h2 className="home_header">Hot Articles</h2>
-        <div className='container'>
+        <main>
+        <h1 className="home_header">Hottest Articles</h1>
+        <section className='container'>
           {popularArticles.map((article) => {
             return <ArticleCard key={article.article_id} article={article}/>
           })}
-        </div>
-        </div>
+        </section>
+        </main>
     )
 }

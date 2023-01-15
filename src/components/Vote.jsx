@@ -27,15 +27,16 @@ if (error) {
 }    
 
 return (
-            <span className="vote_component">
-            <span>
-            <button className="vote_article_button" onClick={() => {
-                vote(1)
-            }}><FaRegArrowAltCircleUp/></button></span>
-            <span className="votes_text">{votes + voteChange} Likes</span>
-            <span><button className="vote_article_button" onClick={() => {
-                vote(-1)}}><FaRegArrowAltCircleDown/></button></span>
-            </span>
+        <div className="vote_component">
             
-            )
+            <button className="vote_article_button" onClick={() => {
+                vote(1)}} aria-label="like article"><FaRegArrowAltCircleUp/></button>
+
+            <p className="votes_text">{votes + voteChange} Likes</p>
+
+            <button className="vote_article_button" onClick={() => {
+                vote(-1)}} aria-label="dislike article"><FaRegArrowAltCircleDown/></button>
+        </div>
+            
+)
 }

@@ -7,21 +7,26 @@ export default function ArticleCard({article}) {
 
     const datePosted = moment(`${article.created_at}`).calendar();
 
-    return <div className="article_card">
+    return ( 
+    <article className="article_card">
         
-        <span className="field1">
+        <header>
           <span className="article_card_topic">{article.topic} • </span>
           <span className="article_posted_by">posted by {article.author} • </span>
           <span className="article_posted_by"> {datePosted}</span>
-        </span>
+        </header>
 
-        <Link className="text_link" to={`/articles/${article.article_id}`}><h3 className="article_card_title">{article.title}</h3></Link>
+        <Link className="text_link" to={`/articles/${article.article_id}`}>
+          <h1 className="article_card_title">{article.title}</h1>
+        </Link>
         
-        <div className="single_article_bottom_container">
-        <p className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {article.comment_count} comments</p>
-        <p className="votes_text">{article.votes} Likes</p>
-        </div>
+        <section className="single_article_bottom_container">
+          <p className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {article.comment_count} comments</p>
 
-    </div>
+          <p className="votes_text">{article.votes} Likes</p>
+        </section>
+
+    </article>
+    )
     
 }

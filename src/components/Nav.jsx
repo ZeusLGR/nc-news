@@ -16,25 +16,32 @@ export default function Nav({setSelectedSortBy}) {
 
 const navigate = useNavigate();
 
-    return <nav className='nav'>
-        <span>
-        <span><Link className='text_link' to="/"><button className='nav_button'>Home</button></Link> </span>
-
-        <span> <Link className='text_link' to="/all_articles" onClick={() => {
+    return (
+    <nav className='nav'>
+        
+        <Link className='text_link' to="/">
+            <button className='nav_button' aria-label="navigate to home page">Home</button>
+        </Link> 
+        <Link className='text_link' to="/all_articles" onClick={() => {
             setSelected("Topics");
             setSelectedSortBy("created_at");
-        }}><button className='nav_button'>View All Articles</button></Link></span>
+        }}>
+            <button className='nav_button' aria-label="navigate to all articles page">View All Articles</button>
+        
+        </Link>
 
-        <span>
-            <select value={selected} onChange={(e) => navigate(`${e.target.value}/articles`)} className='nav_button'>
+        
+        <select value={selected} onChange={(e) => navigate(`${e.target.value}/articles`)} className='nav_button' aria-label="select a topic">
             <option disabled>Topics</option>
-                {menuTopics.map((topic) => {
-                    return <option key={topic.slug} value={topic.slug} className="text_link">{topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}</option>
+            
+            {menuTopics.map((topic) => {
+                return <option key={topic.slug} value={topic.slug} className="text_link" aria-label="view all articles of this topic">
+                    {topic.slug.charAt(0).toUpperCase() + topic.slug.slice(1)}
+                </option>
                 })}
-            </select>
-        </span>
-
-        </span>
+        </select>
+        
     </nav>
+    )
     
 }

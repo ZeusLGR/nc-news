@@ -46,8 +46,7 @@ export default function PostComment({setCommentsList}) {
 
     return (
        <form className="post_comment_box" onSubmit={handleSubmit}>
-        <textarea cols="40" rows="5" value={commentText} onChange={handleCommentText} type="text" 
-          placeholder="What do you think?" className="comment_input"></textarea>
+        <textarea cols="40" rows="5" value={commentText} onChange={handleCommentText} type="text" placeholder="What do you think?" className="comment_input"></textarea>
 
         <button type="submit" name="submitButton" className="post_comment_button" id={changeCommentButtonStyle()} disabled={!commentText}>Comment</button>
 

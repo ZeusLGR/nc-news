@@ -39,29 +39,35 @@ export default function SingleArticle() {
     const datePosted = moment(`${currentArticle.created_at}`).startOf('day').fromNow();
 
     return (
-        <div className="container">
-        <div className="article_card">
+        <article className="container">
+        <main className="article_card">
 
-          <span className="field1">
+          <header>
             <span className="article_card_topic">{currentArticle.topic} • </span>
             <span className="article_posted_by">posted by {currentArticle.author} • </span>
             <span className="article_posted_by"> {datePosted}</span>
-          </span>
+          </header>
 
           <h3 className="article_card_title">{currentArticle.title}</h3>
+
           <p className="article_body">{currentArticle.body}</p>
         
 
-          <span className="single_article_bottom_container">
-          <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments </span> 
-          <span><Vote votes={currentArticle.votes}/></span>
-          </span>
-          <div className="post_comment_container">
-          <PostComment setCommentsList={setCommentsList}/>
-          </div>
+          <section className="single_article_bottom_container">
+            <span className="article_card_comments"><FaRegCommentDots className="comment_icon"/> {currentArticle.comment_count} comments </span> 
+            
+            <span><Vote votes={currentArticle.votes}/></span>
+          </section>
+          
+          <section className="post_comment_container">
+            <PostComment setCommentsList={setCommentsList}/>
+          </section>
 
-        </div>
+        </main>
+        
+          <section>
           <CommentsList commentsList={commentsList} setCommentsList={setCommentsList}/>
-        </div>
+          </section>
+        </article>
     )
 }

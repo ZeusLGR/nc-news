@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 import ArticlesList from './components/ArticlesList';
 import SingleArticle from './components/SingleArticle';
 import { useState } from 'react';
-import ErrorComponent from './components/ErrorComponent';
+
 
 function App() {
   const [selectedSortBy, SetSelectedSortBy] = useState("created_at")
