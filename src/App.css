@@ -27,6 +27,7 @@ select {
   border:none;
   -webkit-appearance: none;
   text-align: center;
+  text-align-last:center;
 }
 
 select:focus {
@@ -403,4 +404,8 @@ select:focus {
   font-weight: bold;
   font-style: italic;
   font-size: 11px;
+}
+
+.topics_header {
+  text-align: center;
 }

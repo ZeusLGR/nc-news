@@ -32,7 +32,7 @@ const navigate = useNavigate();
 
         
         <select value={selected} onChange={(e) => navigate(`${e.target.value}/articles`)} className='nav_button' aria-label="select a topic">
-            <option disabled>Topics</option>
+            <option disabled className='topics_header'>Topics</option>
             
             {menuTopics.map((topic) => {
                 return <option key={topic.slug} value={topic.slug} className="text_link" aria-label="view all articles of this topic">
