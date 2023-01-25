@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# NC News - React Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Link to deployed version
 
-## Available Scripts
+https://nc-news-23.netlify.app/
 
-In the project directory, you can run:
+Node.js "v19.0.0" is required to run this repo locally.
+--
 
-### `npm start`
+## Project summary:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+NC News is a social news aggregation, content rating, and discussion app. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+It draws stored data via the NC News API to present the user with a number of written articles, along with their associated comments and vote count. 
+(Read more about the NC News API here: https://github.com/ZeusLGR/news-api-be-project)
 
-### `npm test`
+Every article has a specific topic which ranges between cooking, coding or football. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Using the navigation buttons a user can choose to view all articles or specify which topic they would like to view articles for.
 
-### `npm run build`
+The home page displays the top voted article for each topic.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+There are also additional options to sort articles by a number of fields and/or view them in either descending or ascening order.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A user is able to click on an article title which will render a more detailed page for that particular article. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here a user can like or dislike this article by clicking the respective arrow buttons, or post a new comment to the comment list section. 
 
-### `npm run eject`
+By default, the user is signed in as "grumpy19" so any new comment posted will appear at the top of the list under this user name. 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The signed in user is able to delete any comment currently stored under their name. Therefore, you will see a "delete" button next to every comment posted by the "grumpy19" user. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Clone this repo:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Copy the URL of this repo: https://github.com/ZeusLGR/nc-news.git
 
-## Learn More
+- Open your command line and create a new directory for where you wish to hold your repo clone.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Make sure you cd into your new directory then use the _'git clone'_ command followed by the URL to clone this repo into your directory.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Install dependencies:
 
-### Code Splitting
+You will need to use the _'npm install'_ command at this point to install the dependencies in the `package.json` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
