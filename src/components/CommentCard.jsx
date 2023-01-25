@@ -49,20 +49,20 @@ export default function CommentCard({comment, setCommentsList}) {
     return (
         <div className='comment_card'>
           
-        <section className="comment_card_bottom_container">
           <div className='avatar_container'>
 
             <img className='user_avatar' src={userAvatar} alt="user_avatar"/>
 
-            <span className="comment_posted_by">{comment.author} </span>
-            <span className="comment_date_posted">• {datePosted}</span>
+            <span className="comment_posted_by">{comment.author}</span>
 
+            <span className="comment_date_posted"> •{datePosted}</span>
+
+            <span className="delete_comment_button">
+              {comment.author === "grumpy19" ? <button onClick={() => {setCommentToDelete(comment.comment_id)}} className={changeCommentButtonStyle()}disabled={commentToDelete} aria-label="delete this comment">Delete</button> : null }
+            </span>
           </div>
-
-          <section>
-            {comment.author === "grumpy19" ? <button onClick={() => {setCommentToDelete(comment.comment_id)}} className={changeCommentButtonStyle()}disabled={commentToDelete} aria-label="delete this comment">Delete</button> : null }
-          </section>
-        </section>
+          
+        
 
         <p className="comment_body">{comment.body}</p>
        

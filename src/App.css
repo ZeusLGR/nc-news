@@ -28,6 +28,7 @@ select {
   -webkit-appearance: none;
   text-align: center;
   text-align-last:center;
+  
 }
 
 select:focus {
@@ -116,6 +117,7 @@ select:focus {
 .avatar_container {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
 }
 
@@ -178,13 +180,6 @@ select:focus {
   padding-right: 10px;
   padding-bottom: 10px;
   max-width: 500px;
-}
-
-.comment_card_bottom_container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .comment_posted_by {
@@ -337,11 +332,10 @@ select:focus {
 }
 
 .comment_input {
-  display: flex;
-  flex-wrap: wrap;
-  height: 12em;
-  max-width: 500px;;
-  width: 21em;
+  max-height: 200px;
+  height: 100%;
+  max-width: 400px;
+  width: 90%;
   border-style: solid;
   border-radius: 5px;
   border-width: 1px;
