@@ -4,6 +4,8 @@
 
 https://nc-news-23.netlify.app/
 
+(When first loading the app you may find there is a bit of loading time required to access the api. This is because the api is currently hosted with a free service)
+
 Node.js "v19.0.0" is required to run this repo locally.
 --
 
